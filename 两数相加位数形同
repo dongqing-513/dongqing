@@ -1,0 +1,31 @@
+#include "stdafx.h"
+
+int main(int argc, char* argv[])
+{
+
+	int a[8]={2,12,33,123,321,0,9,13},w,x,sum,sumg,i,j;
+	for(i=0;i<=7;i++)
+	{
+		for(j=i+1;j<=7;j++)
+		{
+			sum=a[i]+a[j];
+			w=sum%10;
+            sumg=sum;
+		         while(sum!=0)
+			 { 
+		    	 sum=sum/10;
+			     x=sum%10;
+				  if(w!=x)
+				 {
+					 break;
+				 }
+			 }
+                  if(sum==0 && sumg>10)
+			{
+				printf("%d,%d,  %d\n",a[i],a[j],sumg);
+			}
+		}
+	}		
+     	return 0;
+}
+
